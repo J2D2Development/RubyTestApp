@@ -1,0 +1,103 @@
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-09 13:59:41 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/railties-4.0.0/lib/rails/templates/rails/welcome/index.html.erb (11.0ms)
+Completed 200 OK in 332ms (Views: 273.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (42.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (6.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateDrinks (20140909210049)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "drinks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "temperature" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140909210049"]]
+  [1m[36m (6.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/drinks" for 127.0.0.1 at 2014-09-09 14:02:27 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DrinksController#index as HTML
+  [1m[35mDrink Load (1.0ms)[0m  SELECT "drinks".* FROM "drinks"
+  Rendered drinks/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 3741ms (Views: 3720.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-09 14:02:31 -0700
+
+
+Started GET "/assets/drinks.css?body=1" for 127.0.0.1 at 2014-09-09 14:02:31 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-09-09 14:02:31 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-09 14:02:31 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-09 14:02:31 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-09 14:02:31 -0700
+
+
+Started GET "/assets/drinks.js?body=1" for 127.0.0.1 at 2014-09-09 14:02:31 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-09 14:02:31 -0700
+
+
+Started GET "/drinks/new" for 127.0.0.1 at 2014-09-09 14:02:50 -0700
+Processing by DrinksController#new as HTML
+  Rendered drinks/_form.html.erb (184.0ms)
+  Rendered drinks/new.html.erb within layouts/application (216.0ms)
+Completed 200 OK in 264ms (Views: 230.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/drinks" for 127.0.0.1 at 2014-09-09 14:03:13 -0700
+Processing by DrinksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vyRQuNFD9hSDb/KK8UCbvwRq0lTshwEbIy/WuVpy450=", "drink"=>{"name"=>"Balanced Breakfast", "temperature"=>"110"}, "commit"=>"Create Drink"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (31.0ms)[0m  INSERT INTO "drinks" ("created_at", "name", "temperature", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 09 Sep 2014 21:03:13 UTC +00:00], ["name", "Balanced Breakfast"], ["temperature", 110], ["updated_at", Tue, 09 Sep 2014 21:03:13 UTC +00:00]]
+  [1m[36m (4.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/drinks/1
+Completed 302 Found in 44ms (ActiveRecord: 35.0ms)
+
+
+Started GET "/drinks/1" for 127.0.0.1 at 2014-09-09 14:03:13 -0700
+Processing by DrinksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mDrink Load (0.0ms)[0m  SELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered drinks/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 13ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/drinks.css?body=1" for 127.0.0.1 at 2014-09-09 14:03:14 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-09-09 14:03:14 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-09 14:03:14 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-09 14:03:14 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-09 14:03:14 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-09 14:03:14 -0700
+
+
+Started GET "/assets/drinks.js?body=1" for 127.0.0.1 at 2014-09-09 14:03:14 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-09 14:03:14 -0700
+
+
+Started GET "/drinks" for 127.0.0.1 at 2014-09-09 14:03:16 -0700
+Processing by DrinksController#index as HTML
+  [1m[36mDrink Load (0.0ms)[0m  [1mSELECT "drinks".* FROM "drinks"[0m
+  Rendered drinks/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.0ms)
